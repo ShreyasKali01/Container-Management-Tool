@@ -1,0 +1,242 @@
+<script>
+function pslw() {
+       var cn =  document.getElementById("inpname").value;
+	var ci =  document.getElementById("inpimage").value;
+	const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("crun").innerHTML =
+    this.responseText;
+  }
+  xhttp.open("GET", "http://13.233.114.61:3001/run?cname=" + cn + "&cimg=" + ci);
+  xhttp.send();
+	}
+function show() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("cps").innerHTML =
+    this.responseText;
+  }
+  xhttp.open("GET", "http://13.233.114.61:3001/ps");
+  xhttp.send();
+}
+function showall() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("cps").innerHTML =
+    this.responseText;
+  }
+  xhttp.open("GET", "http://13.233.114.61:3001/psall");
+  xhttp.send();
+}
+
+function dc(){
+        var cd = document.getElementById("i2").value;
+         const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("div3").innerHTML =
+    this.responseText;
+  }
+  xhttp.open("GET", "http://13.233.114.61:3001/delete?cid=" + cd);
+  xhttp.send();
+        }
+function sc(){
+        var cd = document.getElementById("i2").value;
+         const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("div3").innerHTML =
+    this.responseText;
+  }
+  xhttp.open("GET", "http://13.233.114.61:3001/stop?cid=" + cd);
+  xhttp.send();
+        }
+function rc(){
+        var cd = document.getElementById("i2").value;
+         const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("div3").innerHTML =
+    this.responseText;
+  }
+  xhttp.open("GET", "http://13.233.114.61:3001/runc?cid=" + cd);
+  xhttp.send();
+        }
+
+
+</script>
+<body bgcolor="FF74B1">
+<h1 id="he1" align="centre"> Launch Container Tool</h1>
+<label id="l1">Name</label><input name="cname" id="inpname" />
+<br />
+<label id="l2">Image Name</label>
+<select name="cimg" id="inpimage">
+        <option>centos</option>
+        <option>ubuntu</option>
+</select>
+<br />
+<div class="main" id="crun"> </div>
+<button id="b1" onclick="pslw()">run</button>
+<div class="main" id="cps"> </div>
+<button id="b2" onclick="show()">show running containers</button>
+<button id="b5" onclick="showall()">show all containers</button>
+<label id="l3"> Enter Container ID </label>
+<input id="i2" name="cid" />
+<button id="b3" onclick="dc()">Delete Container</button>
+<button id="b4" onclick="sc()">Stop Container </button>
+<button id="b6" onclick="rc()">Run Container </button>
+<div id="div3"></div>
+</body>
+<style>
+        * {
+        margin: 0;
+        padding: 0;
+}
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+        label{
+                color: white;
+                font-size: 18;
+                font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        h1#he1{
+                position: absolute;
+                font: serif;
+                color: black;
+                top: 15;
+                left: 37%;
+                padding: 8px 40px;
+        }
+        label#l1{
+                position: absolute;
+                top: 100px;
+                left: 24%;
+                padding: 8px 40px;
+        }
+        input#inpname{
+                position: absolute;
+                top: 100px;
+                left: 30%;
+                padding: 8px 40px;
+                border-radius: 12px;
+        }
+
+        label#l2{
+                position: absolute;
+                top: 100px;
+                left: 697: px;
+                padding: 8px 40px;
+                }
+
+                select#inpimage{
+                position: absolute;
+                top: 100px;
+                left: 845px;
+                padding: 8px 40px;
+        }
+
+        button#b1{
+                position: absolute;
+                top: 100px;
+                left: 1000px;
+                padding: 8px 40px;
+        }
+         button#b2{
+                position: absolute;
+                top: 150px;
+                left: 510px;
+                padding: 8px 40px;
+        }
+          button#b5{
+                position: absolute;
+                top: 150px;
+                left: 840px;
+                padding: 8px 40px;
+        }
+	   button#b6{
+                  position: relative;
+                top: 250px;
+                left: 52%;
+                padding: 8px 40px;
+
+
+        }
+
+
+        div#crun{
+                position: relative;
+                 top: 160px;
+                left: 420px;
+        }
+        div#cps{
+                position: relative;
+                top: 200px;
+                left: 530px;
+        }
+        table{
+                width: 30%
+        }
+         label#l3{
+                position: relative;
+                top: 250;
+                left: 25%;
+        }
+        input#i2{
+                position: relative;
+                top: 250px;
+                left: 25%;
+                padding: 8px 40px;
+                border-radius: 12px;
+
+        }
+        button#b3{
+                position: relative;
+                top: 250px;
+                left: 30%;
+                padding: 8px 40px;
+        }
+         button#b4{
+                position: relative;
+                top: 250px;
+                left: 32%;
+                padding: 8px 40px;
+         }
+        div#div3{
+                position: relative;
+                top:280px;
+                left:640px;
+        }
+        button {
+         border: none;
+        color: #000000;
+        }
+        button:after {
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 100%;
+          top: 0;
+          left: 0;
+          direction: rtl;
+          z-index: -1;
+          box-shadow:
+           -7px -7px 20px 0px #fff9,
+           -4px -4px 5px 0px #fff9,
+           7px 7px 20px 0px #0002,
+           4px 4px 5px 0px #0001;
+          transition: all 0.3s ease;
+        }
+        button:hover {
+          color: #000;
+        }
+        button:hover:after {
+          left: auto;
+          right: 0;
+          width: 100%;
+        }
+        button:active {
+          top: 2px;
+          border-radius: 0px;
+  }
+</style>
+
