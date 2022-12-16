@@ -7,7 +7,7 @@ function pslw() {
     document.getElementById("crun").innerHTML =
     this.responseText;
   }
-  xhttp.open("GET", "http://13.233.114.61:3001/run?cname=" + cn + "&cimg=" + ci);
+  xhttp.open("GET", "http://13.233.231.150:3001/run?cname=" + cn + "&cimg=" + ci);
   xhttp.send();
 	}
 function show() {
@@ -16,7 +16,7 @@ function show() {
     document.getElementById("cps").innerHTML =
     this.responseText;
   }
-  xhttp.open("GET", "http://13.233.114.61:3001/ps");
+  xhttp.open("GET", "http://13.233.231.150:3001/ps");
   xhttp.send();
 }
 function showall() {
@@ -25,7 +25,7 @@ function showall() {
     document.getElementById("cps").innerHTML =
     this.responseText;
   }
-  xhttp.open("GET", "http://13.233.114.61:3001/psall");
+  xhttp.open("GET", "http://13.233.231.150:3001/psall");
   xhttp.send();
 }
 
@@ -36,7 +36,7 @@ function dc(){
     document.getElementById("div3").innerHTML =
     this.responseText;
   }
-  xhttp.open("GET", "http://13.233.114.61:3001/delete?cid=" + cd);
+  xhttp.open("GET", "http://13.233.231.150:3001/delete?cid=" + cd);
   xhttp.send();
         }
 function sc(){
@@ -46,7 +46,7 @@ function sc(){
     document.getElementById("div3").innerHTML =
     this.responseText;
   }
-  xhttp.open("GET", "http://13.233.114.61:3001/stop?cid=" + cd);
+  xhttp.open("GET", "http://13.233.231.150:3001/stop?cid=" + cd);
   xhttp.send();
         }
 function rc(){
@@ -56,7 +56,7 @@ function rc(){
     document.getElementById("div3").innerHTML =
     this.responseText;
   }
-  xhttp.open("GET", "http://13.233.114.61:3001/runc?cid=" + cd);
+  xhttp.open("GET", "http://13.233.231.150:3001/runc?cid=" + cd);
   xhttp.send();
         }
 
